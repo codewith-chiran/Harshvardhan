@@ -1,213 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Journey of Harshvardhan Rane</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      height: 100vh;
-      background: radial-gradient(circle at center, #000814, #000);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: "Poppins", sans-serif;
-      overflow: hidden;
-    }
-
-    .phone {
-      position: relative;
-      width: 360px;
-      height: 640px;
-      background: linear-gradient(180deg, rgba(0,229,255,0.1), rgba(0,0,0,0.9));
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: 0 0 40px rgba(0,229,255,0.6);
-    }
-
-    .title {
-      text-align: center;
-      color: #fff;
-      font-weight: 600;
-      padding-top: 15px;
-      font-size: 1.2rem;
-      text-shadow: 0 0 15px #00E5FF;
-    }
-    .title span { color: #00E5FF; font-weight: 700; }
-
-    /* Center Actor Image */
-    .main-img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 220px;
-      height: 220px;
-      border-radius: 20px;
-      object-fit: cover;
-      opacity: 0;
-      animation: fadeCycle 48s linear infinite;
-      mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, transparent 100%);
-      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 60%, transparent 100%);
-      box-shadow: 0 0 25px rgba(0,229,255,0.7);
-      z-index: 10;
-    }
-
-    @keyframes fadeCycle {
-      0% {opacity: 0;}
-      5% {opacity: 1;}
-      10% {opacity: 1;}
-      15% {opacity: 0;}
-      100% {opacity: 0;}
-    }
-
-    .movies {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 3;
-    }
-
-    .movie {
-      position: absolute;
-      width: 90px;
-      opacity: 0.85;
-      animation: moveAround 30s linear infinite;
-      animation-delay: calc(var(--i) * -3s);
-      transition: transform 0.5s, opacity 1s ease-in-out;
-    }
-
-    .movie:hover {
-      transform: scale(1.15);
-      z-index: 6;
-    }
-
-    .movie img {
-      width: 100%;
-      height: 130px;
-      border-radius: 15px;
-      object-fit: cover;
-      box-shadow: 0 0 20px rgba(0,229,255,0.5);
-    }
-
-    .movie p {
-      text-align: center;
-      color: #00E5FF;
-      font-size: 0.7rem;
-      font-weight: 500;
-      margin-top: 5px;
-      text-shadow: 0 0 8px #00E5FF;
-    }
-
-    /* Orbit */
-    @keyframes moveAround {
-      0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
-      100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
-    }
-
-    /* Emotion text rotating like movie cards */
-    .emotion {
-      position: absolute;
-      width: 120px;
-      text-align: center;
-      color: #ff4ec4;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-shadow: 0 0 10px #ff4ec4;
-      animation: moveAround 30s linear infinite;
-      animation-delay: -27s;
-    }
-
-    .brand {
-      position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #00E5FF;
-      text-shadow: 0 0 20px #00E5FF;
-      z-index: 12;
-    }
-
-    .brand img {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Journey of Harshvardhan Rane</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="phone">
-  <h2 class="title">
-    ✨ The Journey of<br /><span>Harshvardhan Rane</span>
-  </h2>
+    <h2 class="title">
+        ✨ The Journey of<br><span>Harshvardhan Rane</span>
+    </h2>
 
-  <!-- Center Images -->
-  <img class="main-img" src="https://github.com/codewith-chiran/Harshvardhan/blob/main/harshvardhanrane%201.webp?raw=true" style="animation-delay:0s;">
-  <img class="main-img" src="https://github.com/codewith-chiran/Harshvardhan/blob/main/harshvardhanrane%202.webp?raw=true" style="animation-delay:8s;">
-  <img class="main-img" src="https://github.com/codewith-chiran/Harshvardhan/blob/main/harshvardhanrane%203.jpg?raw=true" style="animation-delay:16s;">
-  <img class="main-img" src="https://github.com/codewith-chiran/Harshvardhan/blob/main/harshvardhanrane4.jpg?raw=true" style="animation-delay:24s;">
-  <img class="main-img" src="https://github.com/codewith-chiran/Harshvardhan/blob/main/harshvardhanrane5.jpg?raw=true" style="animation-delay:32s;">
-  <img class="main-img" src="https://github.com/codewith-chiran/Harshvardhan/blob/main/harshvardhanrane%206.jpg?raw=true" style="animation-delay:40s;">
+    <img id="mainActor" class="main-img"
+         src="https://github.com/codewith-chiran/Harshvardhan/blob/main/harshvardhanrane%203.jpg?raw=true"
+         alt="Harshvardhan">
 
-  <div class="movies">
-    <div class="movie" style="--i:1;">
-      <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/1.%20Thakita%20Thakita%20(2010).jpg?raw=true" alt="">
-      <p>Thakita Thakita (2010)</p>
-    </div>
-    <div class="movie" style="--i:2;">
-      <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/2.%20Avunu%20(2012).jpg?raw=true" alt="">
-      <p>Avunu (2012)</p>
-    </div>
-    <div class="movie" style="--i:3;">
-      <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/3.%20Anaamika%20(2014).jpg?raw=true" alt="">
-      <p>Anaamika (2014)</p>
-    </div>
-    <div class="movie" style="--i:4;">
-      <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/4%20Maaya%202014.jpg?raw=true" alt="">
-      <p>Maaya (2014)</p>
-    </div>
-    <div class="movie" style="--i:5;">
-      <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/5.%20Sanam_Teri_Kasam_2016.jpeg?raw=true" alt="">
-      <p>Sanam Teri Kasam (2016)</p>
-    </div>
-    <div class="movie" style="--i:6;">
-      <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/6.%20Paltan_2018.jpg?raw=true" alt="">
-      <p>Paltan (2018)</p>
-    </div>
-    <div class="movie" style="--i:7;">
-      <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/7.%20Haseen_Dillruba_film_poster.jpg?raw=true" alt="">
-      <p>Haseen Dillruba (2021)</p>
-    </div>
-    <div class="movie" style="--i:8;">
-      <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/8.%20Tara_Vs_Bilal_poster.jpg?raw=true" alt="">
-      <p>Tara vs Bilal (2022)</p>
-    </div>
-    <div class="movie" style="--i:9;">
-      <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/9.%20Savi_Poster.jpeg?raw=true" alt="">
-      <p>Savi (2024)</p>
-    </div>
-    <div class="emotion" style="--i:9.5;">
-      <p>A journey not just<br>of movies… but of<br>emotions 💫</p>
-    </div>
-    <div class="movie" style="--i:10;">
-      <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/10.%20ek-deewane-ki-deewaniyat-et00447585-1756106577.avif?raw=true" alt="">
-      <p>Ek Deewane Ki Deewaniyat (2025)</p>
-    </div>
-  </div>
+    <div class="movies">
+        <!-- Movie frames (in order) -->
+        <div class="movie" style="--i:1;">
+            <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/1.%20Thakita%20Thakita%20(2010).jpg?raw=true">
+            <p>Thakita Thakita (2010)</p>
+        </div>
+        <div class="movie" style="--i:2;">
+            <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/avunu2.jpg?raw=true">
+            <p>Avunu (2012)</p>
+        </div>
+        <div class="movie" style="--i:3;">
+            <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/3.%20Anaamika%20(2014).jpg?raw=true">
+            <p>Anaamika (2014)</p>
+        </div>
+        <div class="movie" style="--i:4;">
+            <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/4%20Maaya%202014.jpg?raw=true">
+            <p>Maaya (2014)</p>
+        </div>
+        <div class="movie" style="--i:5;">
+            <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/5.%20Sanam_Teri_Kasam_2016.jpeg?raw=true">
+            <p>Sanam Teri Kasam (2016)</p>
+        </div>
+        <div class="movie" style="--i:6;">
+            <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/6.%20Paltan_2018.jpg?raw=true">
+            <p>Paltan (2018)</p>
+        </div>
+        <div class="movie" style="--i:7;">
+            <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/7.%20Haseen_Dillruba_film_poster.jpg?raw=true">
+            <p>Haseen Dillruba (2021)</p>
+        </div>
+        <div class="movie" style="--i:8;">
+            <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/8.%20Tara_Vs_Bilal_poster.jpg?raw=true">
+            <p>Tara vs Bilal (2022)</p>
+        </div>
+        <div class="movie" style="--i:9;">
+            <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/9.%20Savi_Poster.jpeg?raw=true">
+            <p>Savi (2024)</p>
+        </div>
+        <div class="movie" style="--i:10;">
+            <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/10.%20ek-deewane-ki-deewaniyat-et00447585-1756106577.avif?raw=true">
+            <p>Ek Deewane Ki Deewaniyat (2025)</p>
+        </div>
 
-  <div class="brand">
-    <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/CodeWithChiran%20logo.png?raw=true" alt="">
-    CodeWithChiran
-  </div>
+        <!-- Emotional text between movies -->
+        <div class="movie emotional-text" style="--i:11;">
+            <p>A journey not just of movies…<br>but of emotions 💫</p>
+        </div>
+    </div>
+
+    <div class="brand">
+        <img src="https://github.com/codewith-chiran/Harshvardhan/blob/main/CodeWithChiran%20logo.png?raw=true" alt="">
+        <span>CodeWithChiran</span>
+    </div>
 </div>
+
+<script src="script.js"></script>
 </body>
 </html>
